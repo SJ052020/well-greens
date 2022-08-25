@@ -5,4 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class UserDataService {}
+public class UserDataService {
+    //database access functions
+
+}
