@@ -1,0 +1,23 @@
+type UserProfile {
+    userId: String
+    firstName: String
+    lastName: String
+    dateOfBirth: Date
+    email: String
+    phoneNumber: String
+    rewards: Rewards
+    healthInfo: HealthInfo
+}
+
+type HealthInfo {
+    height: Int
+    weight: Int
+    bmi: Int
+}
+
+type Rewards {
+    name: String
+    iconUrl: String
+    iconUrlAltText: String
+    totalRewardsTillDate: Float
+}

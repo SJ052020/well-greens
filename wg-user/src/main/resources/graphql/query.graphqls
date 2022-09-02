@@ -1,0 +1,4 @@
+type Query {
+    userProfile(userId: String):UserProfile
+    user(userId:String):String
+}

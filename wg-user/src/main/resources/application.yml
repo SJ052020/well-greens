@@ -1,0 +1,31 @@
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          cognito:
+            clientId: clientId
+            clientSecret: clientSecret
+            scope: openid
+            redirect-uri: http://localhost:8080/login/oauth2/code/cognito
+            clientName: clientName
+        provider:
+          cognito:
+            issuerUri: https://cognito-idp.{region}.amazonaws.com/{poolId}
+            user-name-attribute: cognito:username
+
+  application:
+    name: user
+  config:
+    import: configs/resilience/resilience-local.yml
+  sleuth:
+    opentracing:
+      enabled: true
+    trace-id128: true
+    sampler:
+      probability: 1.0
+
+
+spring.graphql.graphiql.enabled: true
+spring.graphql.graphiql.path: /graphiql
