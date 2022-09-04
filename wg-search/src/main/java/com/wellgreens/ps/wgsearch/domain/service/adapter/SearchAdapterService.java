@@ -1,4 +1,4 @@
-package com.wellgreens.ps.wguser.domain.service.adapter;
+package com.wellgreens.ps.wgsearch.domain.service.adapter;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
