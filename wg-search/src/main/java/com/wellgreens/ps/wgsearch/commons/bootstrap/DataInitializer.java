@@ -2,6 +2,7 @@ package com.wellgreens.ps.wgsearch.commons.bootstrap;
 
 import com.wellgreens.ps.wgsearch.domain.entity.Category;
 import com.wellgreens.ps.wgsearch.domain.entity.Item;
+import com.wellgreens.ps.wgsearch.domain.entity.Nutrition;
 import com.wellgreens.ps.wgsearch.domain.enums.CategoryName;
 import com.wellgreens.ps.wgsearch.infrastructure.repository.SearchRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -27,9 +28,11 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
       log.info("Start data initialization....");
-      Item item = Item.builder()
-              .id(1001L).imageUrl("test").imgAltTxt("test").name("Orange").description("This is Orange!!").build();
-      repository
+        Item item = Item.builder()
+                .id(1001L).imageUrl("test").imgAltTxt("test").name("Orange").description("This is Orange!!")
+                .nutritionalInfo(Nutrition.builder().id(1002L).calories(11.3F).carbs(9.3F).fat(4.3F).protein(2.8F).build())
+                .build();
+        repository
               .deleteAll()
               .thenMany(Flux.just(Category.builder().id(1000L).name("FRUITS").items(List.of(item)).build(),
                       Category.builder().id(2000L).name("VEGETABLES").items(List.of(item)).build()))

@@ -1,4 +1,6 @@
 spring:
+  webflux:
+    base-path: /search
   elasticsearch:
     uris: localhost:9200
     socket-timeout: 10s

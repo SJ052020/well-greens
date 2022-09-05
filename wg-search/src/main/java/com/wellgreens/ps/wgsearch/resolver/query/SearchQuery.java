@@ -24,6 +24,7 @@ public class SearchQuery implements GraphQLQueryResolver {
 
     public Mono<CategoryWrapper> getCategories() {
         Flux<Category> categories = searchService.getCategories();
+        categories.log().subscribe();
         Item item = Item.builder()
                 .id(1001L).imageUrl("test").imgAltTxt("test").name("Orange").description("This is Orange!!")
                 .nutritionalInfo(Nutrition.builder().id(1002L).calories(11.3F).carbs(9.3F).fat(4.3F).protein(2.8F).build())
