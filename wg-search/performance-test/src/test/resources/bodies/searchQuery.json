@@ -1,0 +1,1 @@
+{"query":"query{\r\ngetCategories {\r\n    categories{\r\n    id\r\n    name\r\n         \r\n  }  \r\n}\r\n}","variables":{}}'
