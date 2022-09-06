@@ -23,6 +23,6 @@ public class Category {
     private Long id;
     @Field(store = true, type = FieldType.Text, fielddata = true)
     private String name;
-    @Field(store = true, type = FieldType.Auto, fielddata = true)
+    @Field(store = true, type = FieldType.Nested, fielddata = true)
     private List<Item> items;
 }
