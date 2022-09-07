@@ -29,7 +29,7 @@ public class DataInitializer implements CommandLineRunner {
     public void run(String... args) throws Exception {
         log.info("Start data initialization....");
         Item item = Item.builder()
-                .id(1001L).imageUrl("test").imgAltTxt("test").name("Orange").description("This is Orange!!")
+                .id(1001L).imageUrl("https://svgshare.com/i/mU0.svg").imgAltTxt("test").name("Pomegranate").description("This is not an Orange!!")
                 .nutritionalInfo(Nutrition.builder().id(1002L).calories("11.3F")
                         .carbs("9.3F")
                         .fat("4.3F").protein("2.8F").build())
