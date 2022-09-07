@@ -25,12 +25,13 @@ class SearchSimulation extends Simulation{
       .body(ElFileBody(filePath = "./src/test/resources/bodies/searchQuery.json")).asJson
       .check(jsonPath(path = "$.data.getCategories").notNull)
       .check(jsonPath(path = "$.data.getCategories.categories").notNull)
+      .check(jsonPath(path = "$.data.getCategories.categories").count)
       .check(status is 200))
 
   setUp(
     getCategories.inject(
       nothingFor(5),
-      rampUsers(40).during(1.minutes),
+      rampUsers(100).during(1)
     ).protocols(httpConfig)
-  ).maxDuration(1.min())
+  ).maxDuration(100)
 }
