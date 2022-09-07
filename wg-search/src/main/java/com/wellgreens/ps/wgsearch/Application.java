@@ -23,7 +23,7 @@ public class Application {
 
 	@Bean
 	public GraphQLObjectMapper graphQLObjectMapper(ObjectProvider<ObjectMapperProvider> objectMapperProviderObjectProvider,
-												   @Autowired GraphQLErrorHandler graphQLExceptionHandler,
+												   @Autowired(required = false) GraphQLErrorHandler graphQLExceptionHandler,
 												   @Autowired(required = false) GraphQLServletObjectMapperConfigurer objectMapperConfigurer) {
 		GraphQLObjectMapper.Builder builder = GraphQLObjectMapper.newBuilder();
 		builder.withGraphQLErrorHandler(new ErrorHandlerSupplier(graphQLExceptionHandler));
