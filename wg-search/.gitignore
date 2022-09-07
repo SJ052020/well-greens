@@ -6,6 +6,8 @@ build/
 !**/src/test/**/build/
 !.idea/
 
+gradle
+
 ### STS ###
 .apt_generated
 .classpath
