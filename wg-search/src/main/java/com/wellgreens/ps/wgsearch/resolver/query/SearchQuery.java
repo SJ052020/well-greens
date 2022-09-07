@@ -27,7 +27,9 @@ public class SearchQuery implements GraphQLQueryResolver {
         categories.log().subscribe();
         Item item = Item.builder()
                 .id(1001L).imageUrl("test").imgAltTxt("test").name("Orange").description("This is Orange!!")
-                .nutritionalInfo(Nutrition.builder().id(1002L).calories(11.3F).carbs(9.3F).fat(4.3F).protein(2.8F).build())
+                .nutritionalInfo(Nutrition.builder().id(1002L).calories("11.3F")
+                        .carbs("9.3F")
+                        .fat("4.3F").protein("2.8F").build())
                 .build();
         return Mono.just(CategoryWrapper.builder()
                 .categories(List.of(

@@ -27,18 +27,20 @@ public class DataInitializer implements CommandLineRunner {
     private List<Item> items = new ArrayList<>();
     @Override
     public void run(String... args) throws Exception {
-      log.info("Start data initialization....");
+        log.info("Start data initialization....");
         Item item = Item.builder()
                 .id(1001L).imageUrl("test").imgAltTxt("test").name("Orange").description("This is Orange!!")
-                .nutritionalInfo(Nutrition.builder().id(1002L).calories(11.3F).carbs(9.3F).fat(4.3F).protein(2.8F).build())
+                .nutritionalInfo(Nutrition.builder().id(1002L).calories("11.3F")
+                        .carbs("9.3F")
+                        .fat("4.3F").protein("2.8F").build())
                 .build();
         repository
-              .deleteAll()
-              .thenMany(Flux.just(Category.builder().id(1000L).name("FRUITS").items(List.of(item)).build(),
-                      Category.builder().id(2000L).name("VEGETABLES").items(List.of(item)).build()))
-              .flatMap(category -> repository.save(category))
-              .log()
-              .subscribe(null, null, () -> log.info("Data initialization done"));
+                .deleteAll()
+                .thenMany(Flux.just(Category.builder().id(1000L).name("FRUITS").items(List.of(item)).build(),
+                        Category.builder().id(2000L).name("VEGETABLES").items(List.of(item)).build()))
+                .flatMap(category -> repository.save(category))
+                .log()
+                .subscribe(null, null, () -> log.info("Data initialization done"));
 
     }
 }

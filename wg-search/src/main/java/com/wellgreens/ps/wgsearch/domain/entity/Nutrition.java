@@ -19,12 +19,12 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 public class Nutrition {
     @Id
     private Long id;
-    @Field(store = true, type = FieldType.Float, fielddata = true)
-    private Float calories;
-    @Field(store = true, type = FieldType.Float, fielddata = true)
-    private Float carbs;
-    @Field(store = true, type = FieldType.Float, fielddata = true)
-    private Float fat;
-    @Field(store = true, type = FieldType.Float, fielddata = true)
-    private Float protein;
+    @Field(store = true, type = FieldType.Text, fielddata = true)
+    private String calories;
+    @Field(store = true, type = FieldType.Text, fielddata = true)
+    private String carbs;
+    @Field(store = true, type = FieldType.Text, fielddata = true)
+    private String fat;
+    @Field(store = true, type = FieldType.Text, fielddata = true)
+    private String protein;
 }
