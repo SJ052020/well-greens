@@ -23,8 +23,8 @@ type Item {
 
 type Nutrition {
     id: ID!
-    calories: Float
-    carbs: Float
-    fat: Float
-    protein: Float
+    calories: String
+    carbs: String
+    fat: String
+    protein: String
 }
