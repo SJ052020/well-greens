@@ -32,6 +32,8 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
 	implementation 'com.graphql-java-kickstart:graphql-kickstart-spring-boot-starter-webflux:11.1.0'
 	implementation 'com.graphql-java-kickstart:graphql-kickstart-spring-boot-starter-tools:11.1.0'
 	implementation group: 'com.graphql-java', name: 'graphql-java-extended-scalars', version: '2022-07-24T22-44-12-313b221'
