@@ -1,28 +1,26 @@
-package com.wellgreens.ps.wgsearch.domain.entity;
+package com.wellgreens.ps.wgsearch.domain.service.adapter.vo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Dynamic;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
-import java.util.List;
-
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-@ToString
 @Document(indexName = "items")
+@ToString
 public class Item {
     @Id
     private Long id;
-    @Field(store = true, type = FieldType.Text, fielddata = true)
+    @Field(store = true, type = FieldType.Text, dynamic = Dynamic.TRUE)
     private String name;
     @Field(store = true, type = FieldType.Text, fielddata = true)
     private String imageUrl;
