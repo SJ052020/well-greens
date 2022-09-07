@@ -2,29 +2,3 @@ type Query {
     getCategories: CategoryWrapper!
 }
 
-type CategoryWrapper {
-    categories : [Category!]!
-}
-
-type Category {
-    id: ID!
-    name: String!
-    items: [Item!]!
-}
-
-type Item {
-    id: ID!
-    name: String!
-    imageUrl: String!
-    imgAltTxt: String!
-    description: String!
-    nutritionalInfo: Nutrition!
-}
-
-type Nutrition {
-    id: ID!
-    calories: String
-    carbs: String
-    fat: String
-    protein: String
-}

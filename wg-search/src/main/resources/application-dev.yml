@@ -1,0 +1,33 @@
+spring:
+  webflux:
+    base-path: /search
+  elasticsearch:
+    uris: localhost:9200
+    socket-timeout: 10s
+    rest:
+      uris: http://localhost:9200
+  data:
+    elasticsearch:
+      client:
+        reactive:
+          endpoints: localhost:9200
+#          use-ssl: true
+#          username: elastic
+#          password: fXydh9UFtjxMZUD0yZ3T8WAl
+  graphql:
+    graphiql:
+      enabled: true
+      path: /graphiql
+
+logging:
+  level:
+    com:
+      wellgreens:
+        ps:
+          wgsearch: DEBUG
+    org:
+      springframework:
+        data:
+          elasticsearch:
+            core:
+              ReactiveElasticsearchTemplate: trace
