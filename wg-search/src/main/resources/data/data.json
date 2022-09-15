@@ -33,17 +33,17 @@
         }
       },
       {
-        "id": 2002,
-        "name": "Almonds",
-        "imageUrl": "https://svgshare.com/i/mU5.svg",
-        "imgAltTxt": "Almonds",
+        "id": 3001,
+        "name": "Carrots",
+        "imageUrl": "https://svgshare.com/i/mUt.svg",
+        "imgAltTxt": "Carrots",
         "description": "100 gm",
         "nutritionalInfo": {
           "id": 1002,
-          "calories": 579,
-          "carbs": 21.55,
-          "fat": 49.93,
-          "protein": 21.15
+          "calories": 44,
+          "carbs": 9.6,
+          "fat": 0.2,
+          "protein": 0.9
         }
       }
     ]

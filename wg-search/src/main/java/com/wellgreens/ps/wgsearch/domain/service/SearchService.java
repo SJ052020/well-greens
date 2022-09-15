@@ -2,6 +2,7 @@ package com.wellgreens.ps.wgsearch.domain.service;
 
 import com.wellgreens.ps.wgsearch.domain.entity.Category;
 import com.wellgreens.ps.wgsearch.infrastructure.repository.SearchRepository;
+import com.wellgreens.ps.wgsearch.infrastructure.service.SearchDataService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,12 +13,10 @@ import reactor.core.publisher.Flux;
 public class SearchService {
 
     @Autowired
-    private SearchRepository searchRepository;
+    private SearchDataService searchDataService;
+
     public Flux<Category> getCategories() {
-        return searchRepository.findAll();
+        return searchDataService.getAllCategories();
     }
 
-    //public Mono<Category> getByCategoryId(Long categoryId) {
-    //    return searchRepository.findById(categoryId);
-    //}
 }

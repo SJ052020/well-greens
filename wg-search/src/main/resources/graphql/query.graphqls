@@ -1,4 +1,5 @@
 type Query {
+    # get Categories for My Plate Section along with items in each category
     getCategories: CategoryWrapper!
 }
 

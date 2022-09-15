@@ -8,7 +8,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.data.repository.init.Jackson2RepositoryPopulatorFactoryBean;
 
 @Configuration
-public class DatabasePopulatorConfig {
+public class DatabasePopulationConfig {
 
     @Bean
     public Jackson2RepositoryPopulatorFactoryBean repositoryPopulator() {

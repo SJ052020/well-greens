@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "3eb59c41-e54c-43ca-9d94-1f453446a7f6",
+		"name": "HowAThon2022 - WellGreens",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6589078"
+	},
+	"item": [
+		{
+			"name": "wg-search schema",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n  __schema {\r\n    queryType {\r\n      name\r\n      fields{\r\n          name\r\n          description\r\n      }\r\n    }\r\n    mutationType {\r\n        name\r\n        fields{\r\n          name\r\n          description\r\n      }\r\n    }\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://m2ayyv2ch2.execute-api.us-east-1.amazonaws.com/prod/search/graphql",
+					"protocol": "https",
+					"host": [
+						"m2ayyv2ch2",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"search",
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wg-search getCategories",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "origin",
+						"value": "http://www.origin.com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\r\ngetCategories {\r\n    categories{\r\n    id\r\n    name\r\n    items {\r\n        id\r\n        name\r\n        imageUrl\r\n        imgAltTxt\r\n        description\r\n        nutritionalInfo {\r\n            id\r\n            calories\r\n            carbs\r\n            fat\r\n            protein\r\n        }\r\n    }   \r\n  }  \r\n}\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://m2ayyv2ch2.execute-api.us-east-1.amazonaws.com/prod/search/graphql",
+					"protocol": "https",
+					"host": [
+						"m2ayyv2ch2",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"prod",
+						"search",
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wg-search health check",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "origin",
+						"value": "http://www.origin.com",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://44.199.40.130:8080/search/actuator/health",
+					"protocol": "http",
+					"host": [
+						"44",
+						"199",
+						"40",
+						"130"
+					],
+					"port": "8080",
+					"path": [
+						"search",
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
