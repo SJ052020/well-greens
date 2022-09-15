@@ -17,7 +17,6 @@ public class DataInitializer implements CommandLineRunner {
     @Autowired
     private SearchRepository repository;
 
-    private List<Item> items = new ArrayList<>();
     @Override
     public void run(String... args) throws Exception {
         log.info("Start data initialization....");

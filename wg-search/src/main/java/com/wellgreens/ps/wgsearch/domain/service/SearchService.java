@@ -1,7 +1,6 @@
 package com.wellgreens.ps.wgsearch.domain.service;
 
 import com.wellgreens.ps.wgsearch.domain.entity.Category;
-import com.wellgreens.ps.wgsearch.infrastructure.repository.SearchRepository;
 import com.wellgreens.ps.wgsearch.infrastructure.service.SearchDataService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
