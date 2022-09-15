@@ -20,7 +20,7 @@ public class StepDefinitions extends RunCucumberTest{
 
     @When("We request all categories")
     public void allStepDefinitionsAreImplemented() throws IOException {
-        HttpPost postReq = new HttpPost("http://localhost:8080/search/graphql");
+        HttpPost postReq = new HttpPost("https://m2ayyv2ch2.execute-api.us-east-1.amazonaws.com/prod/search/graphql");
         postReq.addHeader(HttpHeaders.CONTENT_TYPE, "application/json");
         String str = "{\"query\":\"query{\\r\\ngetCategories {\\r\\n    categories{\\r\\n    id\\r\\n    name\\r\\n         \\r\\n  }  \\r\\n}\\r\\n}\",\"variables\":{}}";
         postReq.setEntity(new StringEntity(str));
@@ -33,7 +33,6 @@ public class StepDefinitions extends RunCucumberTest{
     @Then("Validate categories list with items")
     public void theScenarioPasses() {
         assertNotNull("Payload is null",payload);
-        GenerateReport.GenerateMasterthoughtReport();
     }
 
 }
