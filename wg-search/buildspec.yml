@@ -6,7 +6,6 @@ phases:
       java: corretto17
   build:
     commands:
-      - cd wg-search/
       - gradle clean build
 artifacts:
   files:
